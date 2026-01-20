@@ -1,2 +1,2 @@
 # WedDevMaria
-Classnotes for WebDev_Spring26
+## Classnotes for WebDev_Spring26
