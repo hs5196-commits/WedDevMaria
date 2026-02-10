@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Steamed Eggs (계란찜)</title>
+
+  <style>
+    body {
+      font-family: system-ui, -apple-system, Verdana, Geneva, Tahoma, sans-serif, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      background: #fafafa;
+      color: #111;
+    }
+
+    /* HEADER + TOP NAV */
+    header {
+      background-color: yellow;
+      border-bottom: 1px solid #e6e6e6;
+      padding: 16px 20px;
+    }
+    header .topbar {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    header a {
+      color: inherit;
+      text-decoration: none;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* MAIN LAYOUT (ARTICLE + ASIDE) */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .layout {
+      display: grid;
+      grid-template-columns: 2fr 1fr; /* big article + sidebar */
+      gap: 18px;
+      align-items: start;
+    }
+
+    article, aside {
+      background: #fff;
+      border: 1px solid #e6e6e6;
+      border-radius: 16px;
+      padding: 18px;
+    }
+
+    /* ARTICLE CONTENT */
+    figure {
+      margin: 0 0 16px 0;
+    }
+    figure img {
+      width: 100%;
+      height: auto;
+      border-radius: 14px;
+      display: block;
+    }
+    h1 { margin: 10px 0 6px; }
+    h2 { margin: 18px 0 8px; }
+
+    /* LISTS */
+    ul, ol { padding-left: 20px; margin: 8px 0 0; }
+
+    /* ASIDE NAV LINKS */
+    aside nav ul {
+      display: block;
+    }
+    aside nav li {
+      margin: 10px 0;
+    }
+    aside nav a {
+      text-decoration: underline;
+    }
+
+    /* FOOTER */
+    footer {
+      max-width: 1100px;
+      margin: 18px auto 28px;
+      padding: 0 20px;
+      color: #555;
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
+    /* small screens */
+    @media (max-width: 800px) {
+      .layout { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER (site title) + NAV (main menu) -->
+  <header>
+    <div class="topbar">
+      <a href="#" aria-label="Homepage"><strong>My Recipe Site</strong></a>
+
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="#">Recipes</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Search</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN (overall page content) -->
+  <main>
+    <div class="layout">
+      <!-- ARTICLE (single recipe) -->
+      <article>
+        <!-- image area -->
+        <figure>
+          <!-- 바꿔줘: 너 이미지 파일명/경로 -->
+          <img src="steamed-eggs.jpg" alt="Korean steamed eggs served in a stone bowl">
+        </figure>
+
+        <!-- title + description -->
+        <h1>Steamed Eggs (계란찜)</h1>
+        <p>
+          This is a simple Korean steamed egg dish called <em>gyeran-jjim</em>.
+          The eggs are gently steamed until soft and fluffy, creating a warm and
+          comforting texture. It is commonly enjoyed as a side dish with rice in
+          Korean home cooking.
+        </p>
+
+        <!-- sections inside article -->
+        <section id="ingredients" aria-labelledby="ingredients-title">
+          <h2 id="ingredients-title">Ingredients</h2>
+          <ul>
+            <li>3 eggs</li>
+            <li>100 ml of water</li>
+            <li>3 pinches of salt</li>
+            <li>3 pinches of pepper</li>
+            <li>Sesame oil</li>
+            <li>Tree onion</li>
+          </ul>
+        </section>
+
+        <section id="instructions" aria-labelledby="instructions-title">
+          <h2 id="instructions-title">Instructions</h2>
+          <ol>
+            <li>Break 3 eggs in a bowl.</li>
+            <li>Mix the eggs and add salt and pepper.</li>
+            <li>Steam for 7 minutes in the microwave.</li>
+            <li>Drizzle one spoon of sesame oil.</li>
+            <li>Finish with a pinch of chopped tree onion.</li>
+          </ol>
+        </section>
+      </article>
+
+      <!-- ASIDE (related recipes) + NAV (list of links) -->
+      <aside>
+        <h2>Related Recipes</h2>
+
+        <nav aria-label="Related recipes navigation">
+          <ul>
+            <li><a href="#">recipe link</a></li>
+            <li><a href="#">recipe link</a></li>
+            <li><a href="#">recipe link</a></li>
+            <li><a href="#">recipe link</a></li>
+            <li><a href="#">recipe link</a></li>
+          </ul>
+        </nav>
+      </aside>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 My Recipe Site</p>
+  </footer>
+</body>
+</html>
