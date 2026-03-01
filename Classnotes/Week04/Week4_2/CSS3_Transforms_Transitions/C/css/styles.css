@@ -1,0 +1,49 @@
+/*We always load our fonts and css variables*/
+/*Then declare the most generic and global styles */
+html,
+body { 
+    margin; 0;
+}
+/*Generic styles so that we can see out div
+elements and how they nest*/
+div { 
+/*Border shorthand - assign 3 values at once;
+border-width border style border color*/
+
+border: 1px solid red;
+padding: 50px;
+}
+
+/* Absolute positioned elements without a 
+positioned ancestor wil be positioned in relation
+the entire browser window*/
+.abs-no-parent {
+    background-color: cornflowerblue;
+    position:absolute;
+    top: 20%;
+    right: 100px;
+}
+
+.rel-parent {
+    background-color: blueviolet;
+    width: 50%;
+    height: 1in;
+    /*Whenever you want to position something absolute */
+}
+
+.abs-rel-parent {
+    background-color: rgb(rgb(127, 59, 59), rgb(43, 113, 43), rgb(23, 23, 175));
+    width: 200px ; 
+    height: 200px ; 
+    position: absolute;
+    bottom: 25px;
+    right: 0px;
+}
+
+header {
+    height: 100px;
+    width: 100%;
+    position:fixed;
+    
+}
+

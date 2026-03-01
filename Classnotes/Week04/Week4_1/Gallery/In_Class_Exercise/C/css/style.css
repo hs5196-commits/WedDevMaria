@@ -1,0 +1,21 @@
+/*always load custome fonts and other dependecies 
+Like other stylesheets or CSS vars) first*/
+
+@import url(link)
+
+/*Universal selector to reset some defaults*/
+* {
+    margin: 0;
+    padding: 0
+}
+
+/*this is how we get a full size Home*/
+
+html {
+    background: url(link) no repeat center center fixed;
+    background
+}
+/*with images we usually make them take up 100% width of a parent element */
+
+border  10px
+chnage the color to 33 

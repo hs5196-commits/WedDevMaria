@@ -1,0 +1,42 @@
+/*Global styles first*/
+/*This example will use Desktop First styling desktop firt 
+= defult styles are written for desktops mdeia queries will
+go from large to smaller screens */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Helvetica,Arial, sans-serif;
+}
+
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+.thumb {
+    width: 25%;
+    
+}
+
+/*
+Border box means dimention you put for width or height includes 
+the padding and the border
+*/
+
+/*
+Content box means the diwth and height spply to the content box only 
+and border and padding widths will add to the width and height final dimension
+*/
+
+#box_sizer {
+    width:200 px;
+    height: 200px;
+    border: 1px solid green;
+    padding: 20px;
+    background-color: rgba(0,0,200,0.3);
+}
