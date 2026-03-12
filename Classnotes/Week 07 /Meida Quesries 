@@ -1,0 +1,33 @@
+/* Media Queires*/ 
+
+/Talent sized screens with a range/ 
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    background-color: rgb 219, 24, 110;
+}
+
+header [ 
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    text-align: center;
+    padding: 0;
+]
+
+.brand { 
+    marigin: 0.5rem;
+}
+
+.mobile-menu {
+    display: block; 
+    color: aaa;
+    font-size: 2rem;
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+}
+
+.menu {
+    flex-dimension: 1px solid rgba{255,255,255,0.2}
+}
+
+.
