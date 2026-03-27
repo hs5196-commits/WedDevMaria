@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Random Content</title>
+    <script>
+      // Make an array of image srcs to choose from at random when the page loads!
+      var arrimgs = [
+        'https://www.dreamstime.com/stock-images-goat-image19732474',
+        'https://media.gettyimages.com/id/1287045484/photo/profile-portrait-of-a-nice-goat.jpg?s=1024x1024&w=gi&k=20&c=-TqohBgnH7bRWo2n1lAt_RMAAEK_eq5L7GR5RrY7ypM=',
+        'https://media.gettyimages.com/id/462786215/photo/rocky-mountain-goat-on-rock-looking-down.jpg?s=1024x1024&w=gi&k=20&c=KWQhDQiNzNaOwyJt7jLSwUAyWEm0pxwvK7TMZIAqrq8=',
+      ]
+
+      // random links to corresponds with each image 
+      var arrLinks = [ 
+        'https://www.dreamstime.com/stock-images-goat-image19732474',
+        'https://media.gettyimages.com/id/1287045484/photo/profile-portrait-of-a-nice-goat.jpg?s=1024x1024&w=gi&k=20&c=-TqohBgnH7bRWo2n1lAt_RMAAEK_eq5L7GR5RrY7ypM=',
+        'https://media.gettyimages.com/id/462786215/photo/rocky-mountain-goat-on-rock-looking-down.jpg?s=1024x1024&w=gi&k=20&c=KWQhDQiNzNaOwyJt7jLSwUAyWEm0pxwvK7TMZIAqrq8=',
+      ]
+
+      //helper function for a rand num between 0 and max 
+      function randomIndex(max){ 
+        return Math, floor(Math.random() * max)
+      }
+
+      //write out own image function of our event listeners
+      //remember to not call this function until the dom content loads!
+
+      function loadRandomImage(){
+        var index = randomIndex(arrImh.length)
+        var img = document.getElementById('dynLink')
+        var link = document.getElementById('dynLink')
+
+        //assign the src attribute of the image element to a string stored in a random index slot
+        img.src = arrImg[index]
+        link.href = arrLinks[index]
+      }
+
+      //wait for the page to finsih laoding before calling any load functions that need to access any HTML element 
+      document.addEventListenr('DoMContentLoaded', function (){
+
+      })
+
+    </script>
+  </head>
+  <body>
+    <a href="#" id="dynLink" target="_blank"><img src="" id="animal" /></a>
+
+
+  </body>
+</html>
