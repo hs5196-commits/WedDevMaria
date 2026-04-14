@@ -1,91 +1,49 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Js Math Methods</title>
-        <script>
-            var x = 15 // this is how we decclaee and assign variable a integer value
-            var y = 35
-            var z // decalre a varbale name but asign varibale value later
-            // later on in your code you can assign a value like:
-            z=10.5 // floating point number
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Random Content</title>
+    <script>
+      // make an array of image srcs to choose from at random when the page loads!
+      var arrImg = [
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hausziege_04.jpg/1920px-Hausziege_04.jpg',
+        'https://upload.wikimedia.org/wikipedia/commons/7/78/Goats_in_an_argan_tree_Morocco.jpg',
+        'https://assets.farmsanctuary.org/content/uploads/2025/01/31130911/2019_01_18_FSAC_Freddy_Goat_DM_2004-1600x1066.jpg',
+      ]
 
-            //addition 
-            console.log(x+y);
-            //subtraction 
-            console.log(x-y)
-            //multiplication 
-            console.log(x*y)
-            //division
-            console.log(x/y)
+      // random links to correspond with each image
+      var arrLinks = [
+        'https://en.wikipedia.org/wiki/Goat',
+        'https://en.wikipedia.org/wiki/Goat#/media/File:Goats_in_an_argan_tree_Morocco.jpg',
+        'https://www.farmsanctuary.org/news-stories/eight-things-you-didnt-know-about-goats/',
+      ]
 
-            //modular operator % returns the division remainder
-            //this is really helpful when you want to use odd/even or every nth numeber 
-            console.log(11%3)
+      // helper function for a rand num btwn 0 and max
+      function randomIndex(max) {
+        return Math.floor(Math.random() * max)
+      }
 
+      // write our own image function outside of our event listeners
+      // remember to not call this function until the dom content loads!
 
-            //increment by 1
-            x++
-            //decrement by 1
-            x--
+      function loadRandomImage() {
+        var index = randomIndex(arrImg.length)
+        var img = document.getElementById('animal')
+        var link = document.getElementById('dynLink')
 
-            //increment by a certain number 
-            x+=2 // x = x+2
-            x-=3 // x = x-3 
-            consol.log(x)
+        // assign the src attribute of the image element to a string stored in a random index slot
+        img.src = arrImg[index]
+        link.href = arrLinks[index]
+      }
 
-            //just like alhebra, order of operations and () matter!
-            condole.log((4 + 5) * 9)
-            console.log(4+5 *9)
-
-            //floats or flaoting point numbers and some basic built in JS math methods
-            var k = 2.25
-            //Math.floor () will round down every time
-            var kDown = Math.floor(k)
-            //math.ceil will roudn up everytime 
-            var kUp = math.ceil(k) 
-
-            console.log('kDown: ', KDown, 'kUp: ', kUp)
-
-            //Math.round() will round up and won to the nearest integer 
-            consolde.log (Math .round(k))
-
-            //Math random () does not recieve any arguments, it just spits out a floating point number between 0 and 1 
-            console.log(Math.random())
-
-            //We can combine Math.random() with math.round to get a 0 or 1 situation we could turn into a boolean
-            var yn = Math.round(math.random())
-            console.log(yn)
-
-            if (yn === 0) { 
-                console.log(false)
-            } else {
-                console.log(true)
-            }
-
-            //random number between 0 and n
-            //we need a function that takes an argument/parameter 
-            //this is a variabel we can change every time we run our function 
-
-            function randNum(num){
-                //when we declare a varibale inside a fiunction, that var is not accessible outside of the {}
-                //this variable is SCOPED, same thing goes for parameters
-                var rn = math.round(num * math.random())
-                console.log(rn)
-            }
-            // call the unftion and odnt forget to pass in a value for num
-            console.log(p)
-            // a random number between 0 and X is a great way to randomly access a slot in an array 
-
-            // random number between min and max 
-            function randNumRange(min,max){
-                var rn = Math.round(Math.randome() * (max-min) + min)
-                console.log(rn)
-            }
-            
-            var randomRangeVar = randNumRange(33,78)
-        </script>
-    </head>
-    <body></body>
+      // wait for the page to finish loading before calling any load functions that need to access any HTML elements on the page
+      document.addEventListener('DOMContentLoaded', function () {
+        loadRandomImage()
+      })
+    </script>
+  </head>
+  <body>
+    <a href="#" id="dynLink" target="_blank"><img src="" id="animal" /></a>
+  </body>
 </html>
