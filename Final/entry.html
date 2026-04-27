@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ============================= */
+    /* Base */
+    /* ============================= */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      color: #FFFFFF;
+
+      background: linear-gradient(
+        135deg,
+        #0A1A2F,
+        #102A4C,
+        #1C3D6B
+      );
+    }
+
+    .entry-box {
+      text-align: center;
+    }
+
+    /* ============================= */
+    /* Title */
+    /* ============================= */
+    h1 {
+      font-size: 28px;
+      font-weight: 400;
+      margin-bottom: 30px;
+      color: #FFFFFF;
+      letter-spacing: 1px;
+    }
+
+    /* ============================= */
+    /* Input */
+    /* ============================= */
+    input {
+      border: none;
+      border-bottom: 2px solid rgba(255,255,255,0.7);
+      background: transparent;
+      padding: 10px;
+      font-size: 20px;
+      text-align: center;
+      outline: none;
+      width: 250px;
+      color: #FFFFFF;
+      transition: 0.3s;
+    }
+
+    input::placeholder {
+      color: rgba(255,255,255,0.5);
+    }
+
+    input:focus {
+      border-bottom: 2px solid #A78BFA;
+    }
+
+    /* ============================= */
+    /* Button */
+    /* ============================= */
+    button {
+      margin-top: 30px;
+      padding: 10px 25px;
+      background-color: rgba(255,255,255,0.1);
+      color: #FFFFFF;
+      border: 1px solid rgba(255,255,255,0.3);
+      cursor: pointer;
+      font-size: 14px;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #6FA3FF, #A78BFA);
+    }
+
+    /* ============================= */
+    /* Fade animation */
+    /* ============================= */
+    .fade-out {
+      animation: fadeOut 0.6s forwards;
+    }
+
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        transform: scale(0.98);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="entry-box">
+    <h1>What is your name?</h1>
+    <input type="text" id="nameInput" placeholder="Enter your name">
+    <br>
+    <button onclick="saveName()">Enter</button>
+  </div>
+
+  <script>
+    function saveName() {
+      const name = document.getElementById("nameInput").value;
+
+      if (name.trim() !== "") {
+        // 이름 저장
+        localStorage.setItem("username", name);
+
+        // welcome 경유용 flag
+        localStorage.setItem("fromEntry", "true");
+
+        // fade-out 효과
+        document.body.classList.add("fade-out");
+
+        // welcome 페이지로 이동
+        setTimeout(() => {
+          window.location.href = "welcome.html";
+        }, 500);
+      }
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome</title>
+
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      color: white;
+      overflow: hidden;
+
+      background: linear-gradient(
+        135deg,
+        #0A1A2F,
+        #102A4C,
+        #1C3D6B
+      );
+    }
+
+    h1 {
+      font-size: 36px;
+      font-weight: 300;
+      letter-spacing: 1px;
+      opacity: 0;
+      text-align: center;
+
+      animation: fadeIn 1s forwards;
+    }
+
+    /* fade in */
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* fade out */
+    .fade-out {
+      animation: fadeOut 0.8s forwards;
+    }
+
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        transform: scale(0.98);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1 id="welcomeText"></h1>
+
+  <script>
+    const name = localStorage.getItem("username") || "Guest";
+
+    const textEl = document.getElementById("welcomeText");
+
+    // 👉 여기 핵심 문장
+    textEl.innerText = `Hello ${name}, Welcome to Maria's Portfolio`;
+
+    // 2초 후 fade out
+    setTimeout(() => {
+      textEl.classList.add("fade-out");
+    }, 2000);
+
+    // 3초 후 index로 이동
+    setTimeout(() => {
+      window.location.href = "index.html";
+    }, 3000);
+  </script>
+
+</body>
+</html>
