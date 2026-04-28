@@ -62,6 +62,7 @@ html {
   top: 0;
   background-color: rgba(10,26,47,0.6);
   backdrop-filter: blur(15px);
+  z-index: 999;
 }
 
 .nav-buttons {
@@ -102,19 +103,23 @@ html {
   align-items: center;
   justify-content: center;
   text-align: center;
-  min-height: 80vh;
+  min-height: 100vh;
   position: relative;
   width: 100%;
-  max-width: 1000px;
-  margin: 0 auto; 
+  margin: 0 auto;
+  padding: 0 20px; /* 좌우 여백만 유지 */
 }
 
 .scroll-hint {
-  position: absolute;
-  bottom: 30px;
-  font-size: 20px;
-  opacity: 0.4;
+  position: static; /* absolute 제거 */
+  display: block;
+  text-align: center;
+  margin-top: 20px; /* 버튼 아래로 내려오기 */
+  font-size: 22px;
+  opacity: 0.8;
   animation: bounce 1.5s infinite;
+  color: white;
+  text-shadow: 0 0 10px rgba(255,255,255,0.6);
 }
 
 @keyframes bounce {
@@ -201,7 +206,7 @@ html {
 }
 
 .section h2 {
-  margin-bottom: 40px;
+  margin-bottom: 10px;
   font-size: 50px;
 }
 
@@ -330,4 +335,480 @@ body {
 .project-grid {
   width: 100%;
   max-width: 1000px;
+}
+
+/*MixItUp fix*/
+.mix {
+  display: block !important;
+  background: none !important;
+  width: 100%;
+}
+
+#Container {
+  display: grid;
+}
+
+/* ============================= */
+/* Projects Page CSS */
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 60px 0 40px;
+}
+
+.controls button {
+  padding: 8px 18px;
+  border: 1px solid #ccc;
+  background: transparent;
+  color: white;
+  font-size: 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.controls button:hover {
+  background: white;
+  color: #1A1A1A;
+}
+
+/* ⭐ 핵심 추가 */
+.controls button.active {
+  background: white;
+  color: #1A1A1A;
+}
+
+#Container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.mix {
+  display: block !important;
+  width: 100%;
+}
+
+.project-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-card {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+  position: relative; /* 중요 */
+  text-align: center;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+/* hover overlay */
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 30, 60, 0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: 0.3s;
+  z-index: 2;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+/* text */
+.project-overlay span {
+  font-size: 12px;
+  color: white;
+}
+
+.project-overlay h3 {
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 5px 0 0;
+  text-align: center;
+}
+
+/* overlay layer fix */
+.project-card::after {
+  z-index: 1;
+}
+
+.project-card img {
+  position: relative;
+  z-index: 0;
+}
+
+/* ============================= */
+/* intro side index.html */
+#intro {
+  position: relative;
+  width: 100%;
+  height: 100vh;   /* 화면 꽉 채움 */
+  overflow: hidden;
+  max-width: none; /* 이거 중요 */
+  width: 100%;
+}
+
+/* 배경 이미지 */
+#intro::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("Images/introimage/sunset.jpeg") center/cover no-repeat;
+  opacity: 0.2; /* 👉 0.2~0.4 사이 조절 */
+  z-index: 0;
+}
+
+/* 기존 내용 위로 올리기 */
+#intro .right-column,
+#intro .scroll-hint {
+  position: relative;
+  z-index: 2;
+}
+
+#intro::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(10,20,40,0.8),
+    rgba(10,20,40,0.4),
+    rgba(10,20,40,0.8)
+  );
+  z-index: -1;
+}
+
+/* ============================= */
+/* about on index.html */
+/* About background */
+#about {
+  position: relative;
+  overflow: hidden;
+  padding-top: 30px;
+  padding-bottom: 80px;
+}
+
+#about::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: url("Images/aboutimage/koreanight.jpg") center/cover no-repeat;
+
+  opacity: 0.3; /* 👉 0.25~0.4 사이 추천 */
+  z-index: -1;
+}
+
+#about::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(10,20,40,0.8),
+    rgba(10,20,40,0.3),
+    rgba(10,20,40,0.8)
+  );
+  z-index: 0;
+}
+
+/* 내용 위로 올리기 */
+#about .about-container,
+#about h2 {
+  position: relative;
+  z-index: 2;
+}
+
+/* ============================= */
+/* projects on index.html */
+
+.project-grid.four {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 60px auto;
+}
+
+/* 카드 */
+.project-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.project-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s;
+}
+
+.project-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Projects background */
+#projects {
+  position: relative;
+  overflow: hidden;
+}
+
+#projects::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("Images/projectimage/brooklyn.jpeg") center/cover no-repeat;
+  opacity: 0.3;
+  z-index: 0;
+}
+
+#projects::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(10,20,40,0.8),
+    rgba(10,20,40,0.3),
+    rgba(10,20,40,0.8)
+  );
+  z-index: 1;
+}
+
+#projects .project-wrapper,
+#projects h2,
+#projects .resume-box {
+  position: relative;
+  z-index: 2;
+}
+
+/* ============================= */
+/* Project Detail Page */
+/* ============================= */
+
+.detail-container {
+  max-width: 900px;
+  margin: 100px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.detail-title {
+  font-family: 'HelloParisSans', sans-serif;
+  font-size: 42px;
+  margin-bottom: 30px;
+}
+
+.detail-image img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 40px;
+  transition: 0.4s;
+}
+
+.detail-image img:hover {
+  transform: scale(1.02);
+}
+
+.detail-text {
+  font-family: 'Noto Sans JP', sans-serif;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.85);
+  text-align: left;
+}
+
+.detail-text h3 {
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.detail-list {
+  margin-top: 10px;
+  line-height: 2;
+}
+
+.detail-list li {
+  margin-bottom: 5px;
+}
+
+.back-link {
+  margin-top: 60px;
+}
+
+.back-link a {
+  text-decoration: none;
+  color: #9AACAB;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.back-link a:hover {
+  color: white;
+}
+
+/* ============================= */
+/* Playingcards Detail Page */
+/* ============================= */
+
+.card-3d-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  perspective: 1000px;
+}
+
+.card-3d {
+  width: 300px;
+  height: 420px;
+  transition: transform 0.2s ease;
+  transform-style: preserve-3d;
+}
+
+.card-3d img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.card-3d {
+  transition: transform 0.15s ease-out;
+}
+
+.card-3d:hover {
+  transform: scale(1.05);
+}
+
+.cards-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  margin-top: 80px;
+}
+
+.card-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+}
+
+/* 👉 방향 반대로 */
+.card-row.reverse {
+  flex-direction: row-reverse;
+}
+
+/* 카드 크기 */
+.card-3d-container {
+  width: 300px;
+  height: 420px;
+}
+
+/* 텍스트 */
+.card-text {
+  max-width: 400px;
+  text-align: left;
+}
+
+.card-text h3 {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.card-text p {
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.card-filters {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.card-filters span {
+  cursor: pointer;
+  position: relative;
+  color: var(--text-muted);
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+/* hover 밑줄 */
+.card-filters span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: white;
+  transition: 0.3s;
+}
+
+.card-filters span:hover::after {
+  width: 100%;
+}
+
+.card-filters span:hover {
+  color: white;
+}
+
+/* 클릭된 상태 */
+.card-filters span.active {
+  color: white;
+}
+
+.card-filters span.active::after {
+  width: 100%;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.card-grid img {
+  width: 100%;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.card-grid img:hover {
+  transform: scale(1.05);
+}
+
+.card-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(111,163,255,0.4);
 }

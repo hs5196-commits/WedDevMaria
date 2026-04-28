@@ -9,6 +9,7 @@ if (name) {
   }
 }
 
+//-----------------------//
 // 👉 처음 entry에서 들어왔을 때만 welcome 실행
 const fromEntry = localStorage.getItem("fromEntry");
 
@@ -16,7 +17,8 @@ if (fromEntry === "true" && !window.location.pathname.includes("welcome.html")) 
     
 }
 
-//////
+//-----------------------//
+// stars : https://devjaewoo.tistory.com/8 //
 
 var WIDTH = window.innerWidth;
 var HEIGHT = window.innerHeight;
@@ -105,3 +107,39 @@ function draw() {
 }
 
 setInterval(draw, DRAW_INTERVAL);
+
+//-----------------------//
+//projects page//
+$(function () {
+  if ($('#Container').length) {
+    $('#Container').mixItUp();
+  }
+});
+
+//-----------------------//
+// Porjects on index.html//
+const leftBtn = document.querySelector('.arrow.left');
+const rightBtn = document.querySelector('.arrow.right');
+const grid = document.querySelector('.project-grid.horizontal');
+
+leftBtn.addEventListener('click', () => {
+  grid.scrollBy({ left: -350, behavior: 'smooth' });
+});
+
+rightBtn.addEventListener('click', () => {
+  grid.scrollBy({ left: 350, behavior: 'smooth' });
+});
+
+//-----------------------//
+// Playing Cards //
+const card = document.querySelector('.card-3d');
+document.addEventListener('mousemove', (e) => {
+  let x = (window.innerWidth / 2 - e.clientX) / 25;
+  let y = (window.innerHeight / 2 - e.clientY) / 25;
+
+  card.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+});
+
+card.addEventListener('mouseleave', () => {
+  card.style.transform = "rotateY(0deg) rotateX(0deg)";
+});

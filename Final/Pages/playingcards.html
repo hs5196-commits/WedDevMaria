@@ -8,46 +8,219 @@
 <body>
 
 <header class="nav">
-  <div class="logo">MARIA</div>
   <nav class="nav-buttons">
     <a href="../index.html">About</a>
-    <a href="photography.html">Photography</a>
     <a href="projects.html">Projects</a>
   </nav>
 </header>
 
 <section class="main">
-  <div class="detail-container" style="padding: 50px; max-width: 900px; margin: 0 auto;">
-    
-    <h1 style="font-family: 'HelloParisSans', sans-serif; font-size: 40px; margin-bottom: 20px;">
-      Playing Cards
-    </h1>
+  <div class="detail-container">
 
-    <div class="detail-image" style="width: 100%; margin-bottom: 30px;">
-      <img src="../Images/projectsimage/playingcards.png" style="width: 100%; border-radius: 4px;">
+    <h1 class="detail-title">Playing Cards</h1>
+
+    <p class="detail-intro">
+      A study of form and abstraction inspired by Bauhaus principles.
+      This project explores how simple geometric systems can generate
+      expressive visual identities.
+    </p>
+
+    <!-- FILTER MENU -->
+    <div class="card-filters">
+      <span data-filter="circle" class="active">Circle</span>
+      <span data-filter="square">Square</span>
+      <span data-filter="triangle">Triangle</span>
+      <span data-filter="organic">Organic</span>
     </div>
 
-    <div class="detail-text" style="font-family: 'Noto Sans JP', sans-serif; line-height: 1.8;">
-      <p>This project applies Bauhaus methods by exploring form 
-        through simplification, abstraction, and material experimentation. 
-        Using playing cards as a starting point, elements are reduced 
-        and reorganized into fundamental shapes and compositions. 
-        It reflects a process of learning by making, 
-        where structure and visual balance emerge through iteration.</p>
+    <!-- SINGLE INTERACTIVE CARD -->
+    <div class="cards-layout">
+
+      <!-- 1 (left card) -->
+      <div class="card-row circle">
+        <div class="card-3d-container">
+          <div class="card-3d">
+            <img src="../Images/projectimage/playingcards/circlejoker.png" alt="Circle Card">
+          </div>
+        </div>
+        <div class="card-text">
+         <h3>Circle</h3>
+         <p>
+        Soft and continuous forms that create a fluid, calm visual identity.
+        </p>
+          <div class="card-grid">
+            <img src="../Images/projectimage/playingcards/circle_1.png">
+            <img src="../Images/projectimage/playingcards/circle_2.png">
+            <img src="../Images/projectimage/playingcards/circle_3.png">
+            <img src="../Images/projectimage/playingcards/circle_4.png">
+            <img src="../Images/projectimage/playingcards/circle_5.png">
+            <img src="../Images/projectimage/playingcards/circle_6.png">
+            <img src="../Images/projectimage/playingcards/circle_7.png">
+            <img src="../Images/projectimage/playingcards/circle_8.png">
+            <img src="../Images/projectimage/playingcards/circle_9.png">
+            <img src="../Images/projectimage/playingcards/circle_10.png">
+            <img src="../Images/projectimage/playingcards/circlequeen.png">
+            <img src="../Images/projectimage/playingcards/circleking.png">
+          </div>
+</div>
+      </div>
+
+      <!-- 2 (right card) -->
+      <div class="card-row reverse square">
+        <div class="card-3d-container">
+          <div class="card-3d">
+            <img src="../Images/projectimage/playingcards/sqaurequeen.png" alt="Square Card">
+          </div>
+        </div>
+        <div class="card-text">
+          <h3>Sqaure</h3>
+          <p>
+            A structured system emphasizing balance, order, and stability.
+          </p>
+          <div class="card-grid">
+            <img src="../Images/projectimage/playingcards/sqaure_1.png">
+            <img src="../Images/projectimage/playingcards/sqaure_2.png">
+            <img src="../Images/projectimage/playingcards/sqaure_3.png">
+            <img src="../Images/projectimage/playingcards/sqaure_4.png">
+            <img src="../Images/projectimage/playingcards/square_5.png">
+            <img src="../Images/projectimage/playingcards/square_6.png">
+            <img src="../Images/projectimage/playingcards/square_7.png">
+            <img src="../Images/projectimage/playingcards/square_8.png">
+            <img src="../Images/projectimage/playingcards/square_9.png">
+            <img src="../Images/projectimage/playingcards/square_10.png">
+            <img src="../Images/projectimage/playingcards/sqaurejoker.png">
+            <img src="../Images/projectimage/playingcards/sqaureking.png">
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="card-row triangle">
+        <div class="card-3d-container">
+          <div class="card-3d">
+            <img src="../Images/projectimage/playingcards/triangleking.png" alt="Triangle Card">
+          </div>
+        </div>
+        <div class="card-text">
+          <h3>Triangle</h3>
+          <p>
+            Sharp geometry that introduces tension and directional movement.
+          </p>
+          <div class="card-grid">
+            <img src="../Images/projectimage/playingcards/triangle_1.png">
+            <img src="../Images/projectimage/playingcards/triangle_2.png">
+            <img src="../Images/projectimage/playingcards/triangle_3.png">
+            <img src="../Images/projectimage/playingcards/triangle_4.png">
+            <img src="../Images/projectimage/playingcards/triangle_5.png">
+            <img src="../Images/projectimage/playingcards/triangle_6.png">
+            <img src="../Images/projectimage/playingcards/triangle_7.png">
+            <img src="../Images/projectimage/playingcards/triangle_8.png">
+            <img src="../Images/projectimage/playingcards/triangle_9.png">
+            <img src="../Images/projectimage/playingcards/triangle_10.png">
+            <img src="../Images/projectimage/playingcards/trianglejoker.png">
+            <img src="../Images/projectimage/playingcards/trianglequeen.png">
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="card-row reverse organic">
+        <div class="card-3d-container">
+          <div class="card-3d">
+            <img src="../Images/projectimage/playingcards/organicjoker.png" alt="Triangle Card">
+          </div>
+        </div>
+        <div class="card-text">
+          <h3>Organic Shape</h3>
+          <p>
+            Free-form shapes that express unpredictability and emotional variation.
+          </p>
+          <div class="card-grid">
+            <img src="../Images/projectimage/playingcards/organic_1.png">
+            <img src="../Images/projectimage/playingcards/organic_.png">
+            <img src="../Images/projectimage/playingcards/organic_3.png">
+            <img src="../Images/projectimage/playingcards/organic_4.png">
+            <img src="../Images/projectimage/playingcards/organic_5.png">
+            <img src="../Images/projectimage/playingcards/organic_6.png">
+            <img src="../Images/projectimage/playingcards/organic_7.png">
+            <img src="../Images/projectimage/playingcards/organic_8.png">
+            <img src="../Images/projectimage/playingcards/organic_9.png">
+            <img src="../Images/projectimage/playingcards/organic_10.png">
+            <img src="../Images/projectimage/playingcards/organicqueen.png">
+            <img src="../Images/projectimage/playingcards/organicking.png">
+          </div>
+        </div>
+      </div>
       
-      <h3 style="margin-top: 30px;">Project Goal</h3>
-        <ul style="line-height: 2;"></ul>
-          <li><strong>Apply:</strong> Using Bauhaus methods to explore form through simplification and abstraction.</li>
-          <li><strong>Deconstruct:</strong> Breaking down playing cards into fundamental shapes and visual elements.</li>
-          <li><strong>Recompose:</strong> Reorganizing these elements to create new compositions and spatial interpretations.</li>
+      <!-- 5 -->
+      <div class="card-row circle">
+        <div class="card-3d-container">
+          <div class="card-3d">
+            <img src="../Images/projectimage/playingcards/cardback.png" alt="Triangle Card">
+          </div>
+        </div>
+        <div class="card-text">
+          <h3>Back</h3>
+          <p>
+            A repeating pattern that reveals the underlying visual system.
+          </p>
+        </div>
+      </div>
+
     </div>
 
-    <div style="margin-top: 50px;">
-      <a href="projects.html" style="text-decoration: none; color: #9AACAB; font-weight: bold;">← Back to Projects</a>
+    <div class="back-link">
+      <a href="projects.html">← Back to Projects</a>
     </div>
 
   </div>
 </section>
 
+<script>
+const cards = document.querySelectorAll('.card-3d');
+
+cards.forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateY = (x - centerX) / 15;
+    const rotateX = -(y - centerY) / 15;
+
+    card.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg) scale(1.05)`;
+  });
+
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = "rotateY(0deg) rotateX(0deg) scale(1)";
+  });
+});
+// FILTER FUNCTION
+const filters = document.querySelectorAll('.card-filters span');
+const rows = document.querySelectorAll('.card-row');
+
+filters.forEach(btn => {
+  btn.addEventListener('click', () => {
+
+    // active style
+    filters.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const type = btn.dataset.filter;
+
+    rows.forEach(row => {
+      if (row.classList.contains(type)) {
+        row.style.display = 'flex';
+      } else {
+        row.style.display = 'none';
+      }
+    });
+  });
+});
+</script>
 </body>
 </html>
