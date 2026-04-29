@@ -10,7 +10,7 @@ if (name) {
 }
 
 //-----------------------//
-// 👉 처음 entry에서 들어왔을 때만 welcome 실행
+//First entry -> entry.html working//
 const fromEntry = localStorage.getItem("fromEntry");
 
 if (fromEntry === "true" && !window.location.pathname.includes("welcome.html")) {
@@ -18,7 +18,10 @@ if (fromEntry === "true" && !window.location.pathname.includes("welcome.html")) 
 }
 
 //-----------------------//
-// stars : https://devjaewoo.tistory.com/8 //
+// How to add stars //
+// https://devjaewoo.tistory.com/8 //
+// https://timothypoon.com/blog/ //
+//-----------------------//
 
 var WIDTH = window.innerWidth;
 var HEIGHT = window.innerHeight;
