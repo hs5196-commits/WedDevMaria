@@ -2,51 +2,311 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Zig-Zag Chair</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zig-Zag Chair | Portfolio</title>
   <link rel="stylesheet" href="../style.css">
+  <style>
+    body {
+      background-color: #091A30; 
+      color: #D1D9E0;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+    .nav {
+      width: 100%;
+      padding: 30px 0;
+      display: flex;
+      justify-content: center; /* making it center */
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 40px;
+    }
+
+    .nav-buttons a {
+      text-decoration: none;
+      color: #FFFFFF;
+      font-family: 'HelloParisSans', sans-serif;
+      font-size: 16px;
+      letter-spacing: 0.1em;
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+
+    .nav-buttons a:hover {
+      opacity: 1;
+    }
+
+    .detail-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 40px 100px 40px;
+    }
+
+    .project-title {
+      font-family: 'HelloParisSans', sans-serif;
+      font-size: 56px;
+      font-weight: 300;
+      margin-bottom: 40px;
+      color: #FFFFFF;
+      text-align: center;
+    }
+
+    .detail-text {
+      font-family: 'Noto Sans JP', sans-serif;
+      line-height: 1.9;
+      margin-bottom: 80px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      font-size: 15px;
+      color: #ced4da;
+    }
+
+    .group-container {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 100px;
+    }
+
+    .section-label {
+      font-family: 'HelloParisSans', sans-serif;
+      font-size: 16px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      margin-bottom: 30px;
+      
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      text-align: left; 
+    }
+
+    .section-label::before {
+      content: "";
+      display: block;
+      width: 2px;
+      height: 20px;
+      background-color: #FFFFFF; 
+    }
+
+    .image-box {
+      display: flex;
+      flex-direction: column;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      border-radius: 2px;
+      object-fit: cover;
+      transition: all 0.4s ease;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    img:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .image-caption {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 13px;
+      color: #8E9AAF;
+      margin-top: 12px;
+      line-height: 1.6;
+      font-weight: 300;
+      text-align: left;
+    }
+
+    .gallery-section {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .row-three {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .row-three img { aspect-ratio: 3 / 4; }
+
+    .row-two {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .model-grid-6 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .model-grid-6 img { aspect-ratio: 5 / 4; }
+
+    .section-divider {
+      height: 1px;
+      background-color: rgba(255, 255, 255, 0.1);
+      margin: 40px 0;
+    }
+
+    @media (max-width: 768px) {
+      .row-three, .row-two, .model-grid-6 { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
 <header class="nav">
   <nav class="nav-buttons">
     <a href="../index.html">About</a>
-    <a href="photography.html">Photography</a>
     <a href="projects.html">Projects</a>
   </nav>
 </header>
 
 <section class="main">
-  <div class="detail-container" style="padding: 50px; max-width: 900px; margin: 0 auto;">
+  <div class="detail-container">
     
-    <h1 style="font-family: 'HelloParisSans', sans-serif; font-size: 40px; margin-bottom: 20px;">
-      Zig Zag Chair 
-    </h1>
+    <h1 class="project-title">Zig Zag Chair</h1>
 
-    <div class="detail-image" style="width: 100%; margin-bottom: 30px;">
-      <img src="../Images/projectsimage/zigzagchair.png" style="width: 100%; border-radius: 4px;">
+    <div class="detail-text">
+      <p>This project began with the construction of a zig-zag chair, which was then reinterpreted through a series of collages. These explorations led to the development of a 3×3 cube, where the essence of the chair was translated into a spatial composition.</p>
     </div>
 
-    <div class="detail-text" style="font-family: 'Noto Sans JP', sans-serif; line-height: 1.8;">
-      <p>This project began with the construction of a zig-zag chair, 
-        which was then reinterpreted through a series of collages. 
-        These explorations led to the development of a 3×3 cube,
-        where the essence of the chair was translated 
-        into a spatial composition. </p>
+    <div class="gallery-section">
       
-      <h3 style="margin-top: 30px;">Project Goal</h3>
-      <ul style="line-height: 2;">
-        <li><strong>Construct:</strong> Building a zig-zag chair as a study of structure and form.</li>
-        <li><strong>Interpret:</strong> Re-exploring the chair through collages to understand its spatial qualities.</li>
-        <li><strong>Translate:</strong> Transforming the chair into a 3×3 cube as an abstract spatial composition.</li>
-      </ul>
+      <div class="group-container">
+        <span class="section-label">Zig-Zag Chair</span>
+        <div class="row-three">
+          <div class="image-box"><img src="../Images/projectimage/zigzag/chairmodel.png"><p class="image-caption">Side view</p></div>
+          <div class="image-box"><img src="../Images/projectimage/zigzag/chairmodel2.png"><p class="image-caption">Front view</p></div>
+          <div class="image-box"><img src="../Images/projectimage/zigzag/chairmodel3.png"><p class="image-caption">Perspective view</p></div>
+        </div>
+        <div class="image-box" style="margin-top:20px;">
+          <img src="../Images/projectimage/zigzag/chairmodel4.png">
+          <p class="image-caption"></p>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <div class="group-container">
+  <span class="section-label">Structural Analysis</span>
+  <div class="row-two">
+    
+    <div class="image-box">
+      <img src="../Images/projectimage/zigzag/structural1.png">
+      <p class="image-caption">
+        Fracture and Flow explores emotional tension through contrast, fractured lines, and spatial instability.
+      </p>
     </div>
 
-    <div style="margin-top: 50px;">
-      <a href="projects.html" style="text-decoration: none; color: #9AACAB; font-weight: bold;">← Back to Projects</a>
+    <div class="image-box">
+      <img src="../Images/projectimage/zigzag/structural2.png">
+      <p class="image-caption">
+        The chair becomes a structural support system as surrounding space visually collapses under pressure.
+      </p>
     </div>
 
   </div>
+</div>
+
+<div class="group-container">
+  <span class="section-label">Ergonomic Analysis</span>
+  <div class="row-two">
+
+    <div class="image-box">
+      <img src="../Images/projectimage/zigzag/ergonomic1.png">
+      <p class="image-caption">
+        Human posture and body movement were used to study emotional interaction with the Zig-Zag Chair.
+      </p>
+    </div>
+
+    <div class="image-box">
+      <img src="../Images/projectimage/zigzag/ergonomic2.png">
+      <p class="image-caption">
+        The sharp geometry creates both physical tension and psychological awareness between object and user.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<div class="group-container">
+  <span class="section-label">Social/Cultural Analysis</span>
+  <div class="row-two">
+
+    <div class="image-box">
+      <img src="../Images/projectimage/zigzag/social1.png">
+      <p class="image-caption">
+        The Weight of Words examines social pressure through newspaper textures, shadows, and fragmented urban imagery.
+      </p>
+    </div>
+
+    <div class="image-box">
+      <img src="../Images/projectimage/zigzag/social2.png">
+      <p class="image-caption">
+        In Living Relation reinterprets the chair as part of warmth, family, communication, and shared everyday life.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="group-container">
+  <span class="section-label">Figure-ground Analysis</span>
+  <div class="row-two">
+
+    <div class="image-box">
+      <img src="../Images/projectimage/zigzag/figureground1.png">
+      <p class="image-caption">
+        Surfaces of Self explores blurred identity through shadows, silhouettes, textures, and fragmented reflections.
+      </p>
+    </div>
+
+    <div class="image-box">
+      <img src="../Images/projectimage/zigzag/figureground2.png">
+      <p class="image-caption">
+        Positive and negative space dissolve together, making the chair feel both visible and emotionally distant.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+      <div class="section-divider"></div>
+
+      <div class="group-container">
+        <span class="section-label">Framework Model</span>
+
+        <p class="section-description">
+      This model explores hidden complexity beneath a simple structure. 
+      From one angle, the form appears minimal and stable, but from another, 
+      layered lines and gaps begin to appear. The unfinished connection between 
+      the vertical line and the upper plane represents tension, distance, and 
+      incomplete connection hidden beneath an organized surface.
+        </p>
+        <div class="model-grid-6">
+          <div class="image-box"><img src="../Images/projectimage/zigzag/model1.png"><p class="image-caption"></p></div>
+          <div class="image-box"><img src="../Images/projectimage/zigzag/model2.png"><p class="image-caption"></p></div>
+          <div class="image-box"><img src="../Images/projectimage/zigzag/model3.png"><p class="image-caption"></p></div>
+          <div class="image-box"><img src="../Images/projectimage/zigzag/model4.jpg"><p class="image-caption"></p></div>
+          <div class="image-box"><img src="../Images/projectimage/zigzag/model5.jpg"><p class="image-caption"></p></div>
+          <div class="image-box"><img src="../Images/projectimage/zigzag/model6.png"><p class="image-caption"></p></div>
+        </div>
+
+        <div style="margin-top: 50px;">
+          <a href="projects.html" style="text-decoration: none; color: #9AACAB; font-weight: bold;">← Back to Projects</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </section>
+
 
 </body>
 </html>

@@ -19,7 +19,7 @@
 
   --accent-blue: #6FA3FF;
   --accent-purple: #A78BFA;
-  --accent-gradient: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+  --accent-gradient: white;
 
   --text-main: #E5E7EB;
   --text-muted: #9CA3AF;
@@ -32,7 +32,7 @@ body {
   font-family: 'Noto Sans JP', sans-serif;
   margin: 0;
   color: var(--text-main);
-  background: linear-gradient(135deg, var(--bg-dark), var(--bg-mid), var(--bg-light));
+  background: white;
   background-attachment: fixed;
 }
 
@@ -85,7 +85,7 @@ html {
   bottom: -6px;
   width: 0%;
   height: 2px;
-  background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+  background: rgba(255, 255, 255, 0.873);
   transition: width 0.3s;
 }
 
@@ -107,24 +107,10 @@ html {
   position: relative;
   width: 100%;
   margin: 0 auto;
-  padding: 0 20px; /* 좌우 여백만 유지 */
-}
-
-.scroll-hint {
-  position: static; /* absolute 제거 */
-  display: block;
-  text-align: center;
-  margin-top: 20px; /* 버튼 아래로 내려오기 */
-  font-size: 22px;
-  opacity: 0.8;
-  animation: bounce 1.5s infinite;
-  color: white;
-  text-shadow: 0 0 10px rgba(255,255,255,0.6);
-}
-
-@keyframes bounce {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(8px); }
+  padding: 0 20px;
+  
+  /* 👉 핵심: 요소들 사이의 간격을 직접 조절 */
+  gap: 15px; 
 }
 
 .display-name {
@@ -133,8 +119,30 @@ html {
   background: white;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
+  margin: 0; 
+  line-height: 1.1;
 }
 
+.bio-box {
+  margin: 0;
+  max-width: 600px;
+}
+
+.button-group {
+  margin-top: 10px; 
+  display: flex;
+  gap: 15px;
+}
+
+.scroll-hint {
+  margin-top: 30px; 
+  font-size: 22px;
+  opacity: 0.8;
+  animation: bounce 1.5s infinite;
+  color: white;
+  text-shadow: 0 0 10px rgba(255,255,255,0.6);
+}
 /* ============================= */
 /* ABOUT*/
 /* ============================= */
@@ -338,8 +346,8 @@ body {
 
 /*MixItUp fix*/
 .mix {
-  display: block !important;
-  background: none !important;
+  display: block;
+  background: none;
   width: 100%;
 }
 
@@ -465,9 +473,9 @@ body {
 #intro {
   position: relative;
   width: 100%;
-  height: 100vh;   /* 화면 꽉 채움 */
+  height: 100vh;
   overflow: hidden;
-  max-width: none; /* 이거 중요 */
+  max-width: none;
   width: 100%;
 }
 
@@ -477,7 +485,7 @@ body {
   position: absolute;
   inset: 0;
   background: url("Images/introimage/sunset.jpeg") center/cover no-repeat;
-  opacity: 0.2; /* 👉 0.2~0.4 사이 조절 */
+  opacity: 0.2; /*0.2~0.4*/
   z-index: 0;
 }
 
@@ -518,7 +526,7 @@ body {
 
   background: url("Images/aboutimage/koreanight.jpg") center/cover no-repeat;
 
-  opacity: 0.3; /* 👉 0.25~0.4 사이 추천 */
+  opacity: 0.3; /*0.25~0.4*/
   z-index: -1;
 }
 
@@ -719,18 +727,16 @@ body {
   gap: 60px;
 }
 
-/* 👉 방향 반대로 */
 .card-row.reverse {
   flex-direction: row-reverse;
 }
 
-/* 카드 크기 */
+
 .card-3d-container {
   width: 300px;
   height: 420px;
 }
 
-/* 텍스트 */
 .card-text {
   max-width: 400px;
   text-align: left;
@@ -761,7 +767,6 @@ body {
   transition: 0.3s;
 }
 
-/* hover 밑줄 */
 .card-filters span::after {
   content: "";
   position: absolute;
@@ -811,3 +816,53 @@ body {
   transform: scale(1.05);
   box-shadow: 0 10px 30px rgba(111,163,255,0.4);
 }
+
+/* ============================= */
+/* ZigZag Detail Page */
+/* ============================= */
+
+.chair-gallery {
+  margin-top: 100px;
+}
+
+.row-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.row-gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.featured-image {
+  width: 60%;
+  margin: 40px auto;
+}
+
+.featured-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .row-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-image {
+    width: 100%;
+  }
+}
+
+.section-description{
+  text-align: left;
+  max-width: 1000px;
+  margin: 20px 0 40px 0;
+  line-height: 1.6;

@@ -8,8 +8,8 @@
 
 <body>
   <!-- navigation -->
-  <header class="nav">
-    <nav class="nav-buttons">
+  <header class="nav" style="position: fixed; top: 0; width: 100%; z-index: 100; padding: 15px 0;">
+    <nav class="nav-buttons" style="display:flex; justify-content:center; align-items:center; width:100%; gap:40px;">
       <a href="#intro" class="active">Intro</a>
       <a href="#about">About</a>
       <a href="#projects">Projects</a> 
@@ -17,19 +17,19 @@
     </nav>
   </header>
 
-  <main>
+  <main style="padding-top: 70px;">
     <!-- INTRO -->
-    <section id="intro" class="profile-section">
+    <section id="intro" class="profile-section" style="display: flex; align-items: center; justify-content: center;">
       <div class="right-column">
-        <div class="name-box">
-          <h2 class="display-name">Hyeon Bo Shim (Maria)</h2>
+        <div class="name-box" style="margin-bottom: 3px;">
+          <h2 class="display-name" style="margin-bottom: 0; line-height: 1.1;">Hyeon Bo Shim (Maria)</h2>
         </div>
-        <div class="bio-box">
-          <p>
+        <div class="bio-box" style="margin-bottom: 5px;">
+          <p style="margin-top: 0; line-height: 1.4;">
             Exploring how design across urban spaces and objects shapes human experience.
           </p>
         </div>
-        <div class="button-group">
+        <div class="button-group" style="margin-top: 10px;">
           <a href="PDF Files/resume.pdf" download class="resume-box">
             Resume
           </a>
@@ -43,15 +43,15 @@
 
     <!-- ABOUT --> <div class="section-divider"></div>
 
-    <section id="about" class="section">
-      <h2 class="display-name">About Me</h2>
+    <section id="about" class="section" style="max-width: 1100px; margin: 0 auto;">
+      <h2 class="display-name" style="margin-top: 60px;">About Me</h2>
       <div class="about-container">
         <div class="about-image">
           <img src="Images/aboutimage/profile.JPG" alt="Maria Shim">
         </div>
         <div class="about-text">
-          <h2>Urban Design & Architectural Stuides</h2>
-          <h4>Integrated Design Media</h4>
+          <h3>Urban Design & Architectural Stuides</h3>
+          <h4>Integrated Design Media | Teacher Education</h4>
           <h5>I design spaces through observation, movement, and human experience. 
             Rather than simply creating structures, I am interested in how people feel, 
             interact, and behave within them. As a student in Urban Design and Architectural Studies 
@@ -64,12 +64,11 @@
 
      <!-- PROJETCS --><div class="section-divider"></div>
 
-    <section id="projects" class="section">
-      <h2 class="display-name">Projects</h2>
+    <section id="projects" class="section" style="max-width: 1100px; margin: 0 auto;">
+      <h2 class="display-name" style="margin-top: 40px;">Projects</h2>
 
 <div class="project-wrapper">
 
-  <!-- 가로 스크롤 영역 -->
   <div class="project-grid four">
 
   <a href="Pages/havenpark.html" class="project-card">
@@ -115,9 +114,9 @@
 
     <!-- CONTACT --> <div class="section-divider"></div>
 
-    <section id="contact" class="section">
-      <h2 class="display-name">Get in touch!</h2>
-      <div class="button-group">
+    <section id="contact" class="section" style="max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 80vh;">
+      <h2 class="display-name" style="margin-bottom: 20px;">Get in touch!</h2>
+      <div class="button-group" style="margin-top: 10px;">
         <a href="https://www.linkedin.com/in/mariashim0710/" 
            target="_blank" 
            class="resume-box">
